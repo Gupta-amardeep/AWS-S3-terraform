@@ -37,3 +37,14 @@ variable buckets {
         }
     }
 }
+
+/*
+   name:- (Optional) Creates a unique bucket name beginning with the specified prefix. Conflicts with bucket.
+   acl:- (Optional) The canned ACL to apply. Defaults to private. Conflicts with grant. private, public-read, public-read-write, aws-exec-read, authenticated-read, and log-delivery-write
+   versioning:- (Optional) A state of versioning.True or False
+   lifecycle_status:- (Required) Specifies lifecycle rule status
+   transition_days:- (Optional) Specifies object transition period
+   transition_days:- (Optional) Specifies object transition storage
+   expiration_days:- (Optional) Specifies a period in the object's expire
+   sse_alogorithm:- (Required) The server-side encryption algorithm to use. Valid values are AES256 and aws:kms
+*/
