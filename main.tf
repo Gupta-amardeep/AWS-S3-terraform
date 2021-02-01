@@ -15,10 +15,8 @@ resource "aws_s3_bucket" "bucket" {
   }
 
   lifecycle_rule {
-    //id      = "log" //unique identifier for rule
+  
     enabled = each.value.lifecycle_status // Required. Specifies lifecycle rule status
-
-    //prefix = "log/" //Optional. Object key prefix identifying one or more object to which rule applies
 
     transition { 
 
@@ -26,10 +24,6 @@ resource "aws_s3_bucket" "bucket" {
       storage_class = each.value.transition_storage
     }
 
-    # transition { // wants to add more transition
-    #   days          = var.transition_days.transition2
-    #   storage_class = var.transition_storage.storage2
-    # }
 
     expiration { 
       days = each.value.expiration_days
